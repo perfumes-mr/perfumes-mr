@@ -21,6 +21,11 @@
       --muted: #cfcfcf;
       --line: rgba(212, 175, 55, 0.28);
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --whatsapp: #25d366;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -32,15 +37,25 @@
       min-height: 100vh;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     header {
-      padding: 48px 20px 28px;
+      padding: 42px 20px 24px;
       text-align: center;
       border-bottom: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
       position: sticky;
       top: 0;
       backdrop-filter: blur(10px);
-      z-index: 10;
+      z-index: 20;
     }
 
     .top-badge {
@@ -61,6 +76,7 @@
       color: var(--gold);
       margin-bottom: 10px;
       letter-spacing: 1px;
+      line-height: 1.2;
     }
 
     header p {
@@ -88,14 +104,70 @@
       letter-spacing: 1px;
     }
 
+    .top-actions {
+      max-width: 1280px;
+      margin: 20px auto 0;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-soft);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(212, 175, 55, 0.16);
+      border-color: rgba(212, 175, 55, 0.55);
+    }
+
+    .busca-wrap {
+      max-width: 1280px;
+      margin: 18px auto 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .busca {
+      width: min(700px, 100%);
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: rgba(15, 15, 15, 0.92);
+      color: white;
+      outline: none;
+      font-size: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .busca::placeholder {
+      color: #a9a9a9;
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 34px 20px 50px;
+      padding: 28px 20px 50px;
+    }
+
+    .resultado-busca {
+      margin-bottom: 18px;
+      color: var(--gold-soft);
+      font-size: 14px;
+      min-height: 20px;
     }
 
     .secao {
       margin-top: 28px;
+      scroll-margin-top: 180px;
     }
 
     .secao h2 {
@@ -109,7 +181,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -128,11 +200,14 @@
       border-color: rgba(212, 175, 55, 0.42);
     }
 
+    .item.hidden {
+      display: none;
+    }
+
     .foto {
       width: 100%;
       height: 300px;
       object-fit: cover;
-      display: block;
       background: #111;
     }
 
@@ -196,6 +271,64 @@
       line-height: 1.5;
     }
 
+    .cta-card {
+      margin-top: 14px;
+      display: inline-block;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      color: #9df0be;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+
+    .cta-card:hover {
+      background: rgba(37, 211, 102, 0.2);
+    }
+
+    .topo-btn {
+      position: fixed;
+      right: 18px;
+      bottom: 88px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,0.4);
+      background: rgba(15,15,15,0.92);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: var(--shadow);
+      z-index: 30;
+      transition: 0.2s ease;
+    }
+
+    .topo-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(28,28,28,0.98);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 24px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      z-index: 31;
+    }
+
     footer {
       text-align: center;
       color: #999;
@@ -205,53 +338,197 @@
       line-height: 1.8;
     }
 
-    @media (max-width: 700px) {
-      header {
-        padding: 34px 16px 22px;
-      }
-
-      header h1 {
-        font-size: 26px;
-      }
-
-      .container {
-        padding: 24px 16px 40px;
-      }
-
-      .secao h2 {
-        font-size: 21px;
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .foto {
-        height: 240px;
+        height: 260px;
+      }
+
+      header h1 {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      header {
+        padding: 24px 14px 18px;
+        position: static;
+      }
+
+      .top-badge {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        padding: 7px 12px;
+        margin-bottom: 10px;
+      }
+
+      header h1 {
+        font-size: 22px;
+        line-height: 1.25;
+        margin-bottom: 8px;
+      }
+
+      header p {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .aviso {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .selo {
+        font-size: 10px;
+        padding: 7px 12px;
+        margin-top: 12px;
+      }
+
+      .top-actions {
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .nav-btn {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      .busca-wrap {
+        margin-top: 14px;
+      }
+
+      .busca {
+        font-size: 14px;
+        padding: 12px 14px;
+        border-radius: 14px;
+      }
+
+      .container {
+        padding: 18px 12px 36px;
+      }
+
+      .secao {
+        margin-top: 20px;
+        scroll-margin-top: 20px;
+      }
+
+      .secao h2 {
+        font-size: 19px;
+        margin-bottom: 14px;
       }
 
       .grid {
         grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .item {
+        border-radius: 16px;
+      }
+
+      .foto {
+        height: 220px;
+      }
+
+      .conteudo {
+        padding: 14px;
+      }
+
+      .codigo {
+        font-size: 11px;
+        padding: 5px 9px;
+        margin-bottom: 10px;
+      }
+
+      .nome {
+        font-size: 17px;
+      }
+
+      .marca,
+      .fragrancia,
+      .bloco-nota span,
+      .bloco-nota strong,
+      .cta-card {
+        font-size: 12px;
+      }
+
+      .topo-btn {
+        right: 14px;
+        bottom: 78px;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+      }
+
+      .whatsapp-float {
+        right: 14px;
+        bottom: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+      }
+
+      footer {
+        padding: 20px 14px 28px;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      .foto {
+        height: 200px;
+      }
+
+      .nome {
+        font-size: 16px;
       }
     }
   </style>
 </head>
-<body>
+<body id="topo">
 
   <header>
     <div class="top-badge">Catálogo Premium MR</div>
     <h1>BEM-VINDO À PÁGINA DE PERFUMES DA MARCA MR</h1>
-    <p>Catálogo com imagens, acordes e notas olfativas das inspirações disponíveis.</p>
+    <p>Catálogo com imagens, acordes e notas olfativas das inspirações disponíveis. Navegue de forma prática pelo celular e encontre sua fragrância ideal.</p>
     <p class="aviso">
       ⚠️ Todos os perfumes apresentados são inspirações olfativas das fragrâncias mencionadas.
       Não comercializamos produtos originais das marcas citadas.
     </p>
     <div class="selo">INSPIRAÇÕES PREMIUM</div>
+
+    <div class="top-actions">
+      <a href="#femininos" class="nav-btn">🌸 Femininos</a>
+      <a href="#masculinos" class="nav-btn">🔥 Masculinos</a>
+    </div>
+
+    <div class="busca-wrap">
+      <input
+        type="text"
+        id="buscaPerfume"
+        class="busca"
+        placeholder="Buscar por nome, marca, acorde ou nota olfativa..."
+      />
+    </div>
   </header>
 
   <main class="container">
+    <div id="resultadoBusca" class="resultado-busca"></div>
 
-    <section class="secao">
+    <section class="secao" id="femininos">
       <h2>🌸 Femininos</h2>
       <div class="grid">
 
-        <div class="item">
+        <div class="item perfume-card" data-search="01 scandal pour femme jean paul gaultier mel doce floral branco citrico caramelo laranja sanguinea mandarina mel gardenia flor de laranjeira jasmim pessego cera de abelha patchouli alcacuz">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.45651.avif" alt="Scandal Pour Femme" class="foto">
           <div class="conteudo">
             <span class="codigo">01</span>
@@ -264,10 +541,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>mel, gardênia, flor de laranjeira, jasmim, pêssego</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>cera de abelha, caramelo, patchouli, alcaçuz</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2001%20-%20Scandal%20Pour%20Femme.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="02 coco mademoiselle chanel citrico amadeirado patchouli doce floral branco laranja mandarina bergamota flor de laranjeira rosa turca jasmim mimosa ylang ylang almiscar branco baunilha vetiver fava tonka">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.611.avif" alt="Coco Mademoiselle" class="foto">
           <div class="conteudo">
             <span class="codigo">02</span>
@@ -280,10 +558,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>rosa turca, jasmim, mimosa, ylang ylang</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>patchouli, almíscar branco, baunilha, vetiver, fava tonka, opoponax</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2002%20-%20Coco%20Mademoiselle.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="03 libre yves saint laurent floral branco citrico lavanda baunilha aromatico mandarina groselha preta petitgrain jasmim almiscar cedro">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56077.avif" alt="Libre" class="foto">
           <div class="conteudo">
             <span class="codigo">03</span>
@@ -296,10 +575,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>lavanda, flor de laranjeira, jasmim</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha de Madagascar, almíscar, cedro, âmbar cinzento</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2003%20-%20Libre.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="04 olympea rabanne baunilha salgado floral branco amadeirado ambar jasmim aquatico mandarina verde flor de gengibre madeira de cashmere sandal">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31666.avif" alt="Olympéa" class="foto">
           <div class="conteudo">
             <span class="codigo">04</span>
@@ -312,10 +592,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>baunilha, sal</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>madeira de cashmere, âmbar cinzento, sândalo</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2004%20-%20Olympéa.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="05 baccarat rouge 540 maison francis kurkdjian amadeirado ambar especiado quente metalico acafrao jasmim cedro ambroxan">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.avif" alt="Baccarat Rouge 540" class="foto">
           <div class="conteudo">
             <span class="codigo">05</span>
@@ -328,10 +609,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>madeira de âmbar, âmbar cinzento, hedione</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>resina de abeto, cedro, açúcar, ambroxan, musgo de carvalho</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2005%20-%20Baccarat%20Rouge%20540.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="06 la vie est belle lancome doce baunilha frutado patchouli amadeirado groselha preta pera iris jasmim flor de laranjeira praline">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.14982.avif" alt="La Vie Est Belle" class="foto">
           <div class="conteudo">
             <span class="codigo">06</span>
@@ -344,10 +626,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>íris, jasmim, flor de laranjeira</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>pralinê, baunilha, patchouli, fava tonka</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2006%20-%20La%20Vie%20Est%20Belle.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="07 chloe eau de parfum floral rosa fresco frutado floral branco peonia lichia fresia lirio do vale magnolia cedro ambar">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1733.avif" alt="Chloé Eau de Parfum" class="foto">
           <div class="conteudo">
             <span class="codigo">07</span>
@@ -360,10 +643,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>rosa, lírio-do-vale, magnólia</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>cedro da Virgínia, âmbar</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2007%20-%20Chloé%20Eau%20de%20Parfum.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="08 delina parfums de marly rosa floral frutado fresco almiscarado lichia ruibarbo bergamota noz moscada groselha preta peonia baunilha caramelo">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.43871.avif" alt="Delina" class="foto">
           <div class="conteudo">
             <span class="codigo">08</span>
@@ -376,10 +660,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>rosa turca, peônia, almíscar, petalia, baunilha</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>cashmeran, incenso, cedro, vetiver do Haiti, caramelo</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2008%20-%20Delina.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="09 fame rabanne tropical baunilha frutado doce amadeirado manga bergamota jasmim olibano sandalo">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.74962.avif" alt="Fame" class="foto">
           <div class="conteudo">
             <span class="codigo">09</span>
@@ -392,10 +677,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>jasmim, olíbano</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, sândalo</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2009%20-%20Fame.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="10 l interdit givenchy floral branco tuberosa doce citrico amadeirado pera bergamota flor de laranjeira jasmim sambac baunilha vetiver">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.51488.avif" alt="L’Interdit" class="foto">
           <div class="conteudo">
             <span class="codigo">10</span>
@@ -408,10 +694,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>tuberosa, flor de laranjeira, jasmim sambac</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>patchouli, baunilha, ambroxan, vetiver</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2010%20-%20L’Interdit.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="11 good girl carolina herrera doce floral branco especiado quente baunilha ambar amendoa cafe tuberosa jasmim sambac cacau praline canela">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.39681.avif" alt="Good Girl" class="foto">
           <div class="conteudo">
             <span class="codigo">11</span>
@@ -424,10 +711,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>tuberosa, jasmim sambac, flor de laranjeira, rosa búlgara, raiz de orris</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>fava tonka, cacau, baunilha, pralinê, sândalo, almíscar, âmbar, cashmere, patchouli, canela, cedro</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2011%20-%20Good%20Girl.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="12 lady million rabanne floral branco doce mel citrico frutado framboesa neroli limao de amalfi gardenia mel branco patchouli">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9045.avif" alt="Lady Million" class="foto">
           <div class="conteudo">
             <span class="codigo">12</span>
@@ -440,10 +728,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>jasmim, flor de laranjeira africana, gardênia</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>mel branco, patchouli, âmbar</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2012%20-%20Lady%20Million.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="13 my way giorgio armani floral branco tuberosa citrico baunilha flor de laranjeira bergamota jasmim indiano almiscar branco cedro">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.62036.avif" alt="My Way" class="foto">
           <div class="conteudo">
             <span class="codigo">13</span>
@@ -456,10 +745,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>tuberosa, jasmim indiano</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha de Madagascar, almíscar branco, cedro da Virgínia</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2013%20-%20My%20Way.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="14 ocean di gioia giorgio armani floral branco verde fresco frutado citrico pera notas verdes jazmim aquatico lirio do vale sal rosa sandalo">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.59809.avif" alt="Ocean di Gioia" class="foto">
           <div class="conteudo">
             <span class="codigo">14</span>
@@ -472,10 +762,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>jasmim aquático, lírio-do-vale, sal, rosa</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar, sândalo</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2014%20-%20Ocean%20di%20Gioia.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="15 212 vip rose carolina herrera floral almiscarado frutado amadeirado atalcado champanhe rose pimenta rosa flor de pessego rosa">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.22857.avif" alt="212 VIP Rosé" class="foto">
           <div class="conteudo">
             <span class="codigo">15</span>
@@ -488,10 +779,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>flor de pêssego, rosa</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar branco, notas amadeiradas</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2015%20-%20212%20VIP%20Rosé.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="16 212 sexy women carolina herrera doce atalcado almiscarado picante suave caramelo pimenta rosa mandarina bergamota algodao doce gardenia flores baunilha violeta">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.306.avif" alt="212 Sexy Women" class="foto">
           <div class="conteudo">
             <span class="codigo">16</span>
@@ -504,10 +796,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>algodão-doce, gardênia, flores, pelargônio, rosa</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, almíscar, sândalo, caramelo, patchouli, violeta</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2016%20-%20212%20Sexy%20Women.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="17 light blue dolce gabbana citrico amadeirado fresco frutado aromatico limao siciliano maca cedro campanula bambu jasmim rosa branca almiscar">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.485.avif" alt="Light Blue" class="foto">
           <div class="conteudo">
             <span class="codigo">17</span>
@@ -520,10 +813,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>bambú, jasmim, rosa branca</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>cedro, almíscar, âmbar</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2017%20-%20Light%20Blue.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="18 lily eau de parfum o boticario floral branco frutado atalcado picante suave pessego damasco pera pimenta rosa mandarina lirio jasmim gardenia osmanthus narciso iris violeta baunilha">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.64415.avif" alt="Lily Eau de Parfum" class="foto">
           <div class="conteudo">
             <span class="codigo">18</span>
@@ -536,10 +830,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>lírio, jasmim, gardênia, osmanthus, narciso, íris, rosa, violeta</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar, baunilha, âmbar, sândalo, patchouli, vetiver, musgo</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2018%20-%20Lily%20Eau%20de%20Parfum.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="19 euphoria calvin klein amadeirado floral doce atalcado ambar roma caqui acorde verde orquidea negra lotus champaca mogno violeta negra">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.253.avif" alt="Euphoria" class="foto">
           <div class="conteudo">
             <span class="codigo">19</span>
@@ -552,10 +847,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>orquídea negra, lótus, champaca</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>mogno, âmbar, violeta negra, chantilly</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2019%20-%20Euphoria.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="20 angel mugler doce patchouli frutado especiado quente caramelo algodao doce coco cassis melao jasmim bergamota abacaxi mel chocolate baunilha fava tonka">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.704.avif" alt="Angel" class="foto">
           <div class="conteudo">
             <span class="codigo">20</span>
@@ -568,17 +864,18 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>mel, bagas vermelhas, amora, ameixa, damasco, jasmim, pêssego, noz-moscada, alcarávia, orquídea, rosa, lírio-do-vale</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>patchouli, chocolate, caramelo, baunilha, fava tonka, âmbar, almíscar, sândalo</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2020%20-%20Angel.">Pedir no WhatsApp</a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <section class="secao">
+    <section class="secao" id="masculinos">
       <h2>🔥 Masculinos</h2>
       <div class="grid">
 
-        <div class="item">
+        <div class="item perfume-card" data-search="50 acqua di gio giorgio armani citrico aromatico marinho fresco especiado floral lima limao bergamota jasmim notas oceanicas alecrim cedro patchouli ambar">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.410.avif" alt="Acqua di Giò" class="foto">
           <div class="conteudo">
             <span class="codigo">50</span>
@@ -591,10 +888,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>notas oceânicas, jasmim, calone, alecrim, pêssego, frésia, jacinto, cyclamen, violeta, coentro, rosa, noz-moscada, resedá</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar branco, cedro, musgo de carvalho, patchouli, âmbar</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2050%20-%20Acqua%20di%20Giò.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="51 aventus creed frutado doce amadeirado couro citrico bergamota groselha preta maca limao pimenta rosa abacaxi patchouli birch almiscar">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9828.avif" alt="Aventus" class="foto">
           <div class="conteudo">
             <span class="codigo">51</span>
@@ -607,10 +905,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>abacaxi, patchouli, jasmim marroquino</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>bétula, almíscar, musgo de carvalho, cedro, ambroxan</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2051%20-%20Aventus.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="52 1 million rabanne especiado quente canela citrico ambar amadeirado mandarina sanguinea toranja hortela rosa couro patchouli">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.3747.avif" alt="1 Million" class="foto">
           <div class="conteudo">
             <span class="codigo">52</span>
@@ -623,10 +922,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>canela, notas especiadas, rosa</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>âmbar, couro, notas amadeiradas, patchouli indiano</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2052%20-%201%20Million.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="53 212 men carolina herrera citrico verde fresco especiado aromatico amadeirado toranja especiarias bergamota lavanda petitgrain gengibre violeta incenso vetiver">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.297.avif" alt="212 Men" class="foto">
           <div class="conteudo">
             <span class="codigo">53</span>
@@ -639,10 +939,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>gengibre, violeta, gardênia, sálvia</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar, sândalo, incenso, vetiver, madeira guaiac, ládano</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2053%20-%20212%20Men.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="54 scandal pour homme jean paul gaultier caramelo aromatico doce citrico baunilha mandarina sálvia fava tonka vetiver">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.68074.avif" alt="Scandal Pour Homme" class="foto">
           <div class="conteudo">
             <span class="codigo">54</span>
@@ -655,10 +956,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>caramelo, fava tonka</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>vetiver</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2054%20-%20Scandal%20Pour%20Homme.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="55 212 vip black carolina herrera aromatico baunilha picante suave anis lavanda absinto erva doce almiscar">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.46093.avif" alt="212 VIP Black" class="foto">
           <div class="conteudo">
             <span class="codigo">55</span>
@@ -671,10 +973,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>lavanda</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>casca de baunilha negra, almíscar</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2055%20-%20212%20VIP%20Black.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="56 boss bottled hugo boss amadeirado frutado baunilha especiado quente canela maça ameixa bergamota limao cravo sandalo cedro vetiver">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.383.avif" alt="Boss Bottled" class="foto">
           <div class="conteudo">
             <span class="codigo">56</span>
@@ -687,10 +990,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>canela, mogno, cravo</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, sândalo, cedro, vetiver, oliveira</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2056%20-%20Boss%20Bottled.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="57 allure homme sport chanel citrico aromatico baunilha aldeidico marinho laranja notas oceanicas mandarina sanguinea pimenta neroli cedro tonka vetiver">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.607.avif" alt="Allure Homme Sport" class="foto">
           <div class="conteudo">
             <span class="codigo">57</span>
@@ -703,10 +1007,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>pimenta, néroli, cedro</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, fava tonka, almíscar branco, âmbar, vetiver, resina de elemi</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2057%20-%20Allure%20Homme%20Sport.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="58 sauvage dior fresco especiado ambar citrico aromatico almiscarado bergamota da calabria pimenta lavanda vetiver patchouli ambroxan cedro">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.avif" alt="Sauvage" class="foto">
           <div class="conteudo">
             <span class="codigo">58</span>
@@ -719,10 +1024,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>pimenta de Szechuan, lavanda, pimenta rosa, vetiver, patchouli, gerânio, elemi</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>ambroxan, cedro, ládano</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2058%20-%20Sauvage.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="59 212 vip men carolina herrera fresco especiado aromatico vodka amadeirado verde maracuja lima pimenta gengibre gin hortela couro ambar">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.12865.avif" alt="212 VIP Men" class="foto">
           <div class="conteudo">
             <span class="codigo">59</span>
@@ -735,10 +1041,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>vodka, gin, hortelã, especiarias</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>âmbar, couro, notas amadeiradas</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2059%20-%20212%20VIP%20Men.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="60 invictus rabanne citrico marinho aromatico fresco especiado amadeirado notas oceanicas toranja mandarina folha de louro jasmim musgo de carvalho patchouli">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.18471.avif" alt="Invictus" class="foto">
           <div class="conteudo">
             <span class="codigo">60</span>
@@ -751,10 +1058,11 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>folha de louro, jasmim</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>âmbar cinzento, madeira guaiac, musgo de carvalho, patchouli</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2060%20-%20Invictus.">Pedir no WhatsApp</a>
           </div>
         </div>
 
-        <div class="item">
+        <div class="item perfume-card" data-search="61 versace eros versace baunilha aromatico verde fresco especiado ambar hortela maca verde limao fava tonka ambroxan geranio cedro vetiver">
           <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.16657.avif" alt="Versace Eros" class="foto">
           <div class="conteudo">
             <span class="codigo">61</span>
@@ -767,6 +1075,7 @@
               <div class="bloco-nota"><strong>Coração:</strong><span>fava tonka, ambroxan, gerânio</span></div>
               <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha de Madagascar, cedro da Virgínia, cedro Atlas, vetiver, musgo de carvalho</span></div>
             </div>
+            <a class="cta-card" href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20inspiração%2061%20-%20Versace%20Eros.">Pedir no WhatsApp</a>
           </div>
         </div>
 
@@ -775,6 +1084,9 @@
 
   </main>
 
+  <a href="#topo" class="topo-btn" aria-label="Voltar ao topo">↑</a>
+  <a href="https://wa.me/5561983422351?text=Olá!%20Quero%20conhecer%20as%20inspirações%20da%20MR." class="whatsapp-float" aria-label="WhatsApp">⌕</a>
+
   <footer>
     © Perfumes MR - Todos os direitos reservados<br>
     ⚠️ Este catálogo apresenta fragrâncias inspiradas em perfumes de marcas conhecidas.<br>
@@ -782,5 +1094,35 @@
     Todos os nomes e referências são usados apenas como base olfativa.
   </footer>
 
+  <script>
+    const buscaInput = document.getElementById('buscaPerfume');
+    const cards = document.querySelectorAll('.perfume-card');
+    const resultadoBusca = document.getElementById('resultadoBusca');
+
+    function filtrarPerfumes() {
+      const termo = buscaInput.value.toLowerCase().trim();
+      let visiveis = 0;
+
+      cards.forEach(card => {
+        const texto = card.getAttribute('data-search').toLowerCase();
+        const match = texto.includes(termo);
+
+        if (match || termo === '') {
+          card.classList.remove('hidden');
+          visiveis++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (termo === '') {
+        resultadoBusca.textContent = '';
+      } else {
+        resultadoBusca.textContent = visiveis + ' resultado(s) encontrado(s) para: "' + termo + '"';
+      }
+    }
+
+    buscaInput.addEventListener('input', filtrarPerfumes);
+  </script>
 </body>
 </html>
