@@ -18,7 +18,7 @@
       --gold: #d4af37;
       --gold-soft: #f0d77a;
       --text: #f5f5f5;
-      --muted: #bdbdbd;
+      --muted: #cfcfcf;
       --line: rgba(212, 175, 55, 0.28);
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
@@ -26,7 +26,7 @@
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background:
-        radial-gradient(circle at top, rgba(212,175,55,0.10), transparent 30%),
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.10), transparent 30%),
         linear-gradient(180deg, #000 0%, #090909 100%);
       color: var(--text);
       min-height: 100vh;
@@ -64,15 +64,15 @@
     }
 
     header p {
-      color: var(--muted);
+      color: #d8d8d8;
       font-size: 15px;
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
     .aviso {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 14px;
       color: #f0d77a;
     }
@@ -89,7 +89,7 @@
     }
 
     .container {
-      max-width: 1180px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 34px 20px 50px;
     }
@@ -109,7 +109,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 18px;
     }
 
@@ -130,7 +130,7 @@
 
     .foto {
       width: 100%;
-      height: 260px;
+      height: 300px;
       object-fit: cover;
       display: block;
       background: #111;
@@ -153,7 +153,7 @@
     }
 
     .nome {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 700;
       color: #fff;
       line-height: 1.35;
@@ -172,13 +172,37 @@
       line-height: 1.5;
     }
 
+    .notas {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(212, 175, 55, 0.18);
+    }
+
+    .bloco-nota {
+      margin-bottom: 10px;
+    }
+
+    .bloco-nota strong {
+      display: block;
+      color: #f0d77a;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .bloco-nota span {
+      display: block;
+      color: #cfcfcf;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
     footer {
       text-align: center;
       color: #999;
       border-top: 1px solid var(--line);
       padding: 24px 20px 34px;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     @media (max-width: 700px) {
@@ -199,7 +223,11 @@
       }
 
       .foto {
-        height: 220px;
+        height: 240px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -209,9 +237,9 @@
   <header>
     <div class="top-badge">Catálogo Premium MR</div>
     <h1>BEM-VINDO À PÁGINA DE PERFUMES DA MARCA MR</h1>
-    <p>Catálogo com imagens e descrição das fragrâncias.</p>
+    <p>Catálogo com imagens, acordes e notas olfativas das inspirações disponíveis.</p>
     <p class="aviso">
-      ⚠️ Todos os perfumes apresentados são INSPIRAÇÕES olfativas das fragrâncias mencionadas.
+      ⚠️ Todos os perfumes apresentados são inspirações olfativas das fragrâncias mencionadas.
       Não comercializamos produtos originais das marcas citadas.
     </p>
     <div class="selo">INSPIRAÇÕES PREMIUM</div>
@@ -224,202 +252,322 @@
       <div class="grid">
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.45651.avif" alt="Scandal Pour Femme – Jean Paul Gaultier" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.45651.avif" alt="Scandal Pour Femme" class="foto">
           <div class="conteudo">
             <span class="codigo">01</span>
             <div class="nome">SCANDAL POUR FEMME</div>
             <div class="marca">Jean Paul Gaultier</div>
-            <div class="fragrancia">Fragrância: doce intensa e envolvente.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>mel, doce, floral branco, cítrico, caramelo</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>laranja sanguínea, mandarina</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>mel, gardênia, flor de laranjeira, jasmim, pêssego</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>cera de abelha, caramelo, patchouli, alcaçuz</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.611.avif" alt="Coco Mademoiselle – Chanel" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.611.avif" alt="Coco Mademoiselle" class="foto">
           <div class="conteudo">
             <span class="codigo">02</span>
             <div class="nome">COCO MADEMOISELLE</div>
             <div class="marca">Chanel</div>
-            <div class="fragrancia">Fragrância: cítrica floral chique e intensa.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>cítrico, amadeirado, patchouli, doce, floral branco</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>laranja, mandarina, bergamota, flor de laranjeira</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>rosa turca, jasmim, mimosa, ylang ylang</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>patchouli, almíscar branco, baunilha, vetiver, fava tonka, opoponax</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56077.avif" alt="Libre – Yves Saint Laurent" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56077.avif" alt="Libre" class="foto">
           <div class="conteudo">
             <span class="codigo">03</span>
             <div class="nome">LIBRE</div>
             <div class="marca">Yves Saint Laurent</div>
-            <div class="fragrancia">Fragrância: floral aromática e elegante.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral branco, cítrico, lavanda, baunilha, aromático</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>lavanda, mandarina, groselha preta, petitgrain</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>lavanda, flor de laranjeira, jasmim</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha de Madagascar, almíscar, cedro, âmbar cinzento</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31666.avif" alt="Olympéa – Rabanne" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31666.avif" alt="Olympéa" class="foto">
           <div class="conteudo">
             <span class="codigo">04</span>
             <div class="nome">OLYMPÉA</div>
             <div class="marca">Rabanne</div>
-            <div class="fragrancia">Fragrância: doce salgada e sensual.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>baunilha, salgado, floral branco, amadeirado, âmbar</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>jasmim aquático, mandarina verde, flor de gengibre</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>baunilha, sal</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>madeira de cashmere, âmbar cinzento, sândalo</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.avif" alt="Baccarat Rouge 540 – Maison Francis Kurkdjian" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.avif" alt="Baccarat Rouge 540" class="foto">
           <div class="conteudo">
             <span class="codigo">05</span>
             <div class="nome">BACCARAT ROUGE 540</div>
             <div class="marca">Maison Francis Kurkdjian</div>
-            <div class="fragrancia">Fragrância: ambarada, sofisticada e intensa.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>amadeirado, âmbar, especiado quente, metálico, fresco especiado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>açafrão, jasmim</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>madeira de âmbar, âmbar cinzento, hedione</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>resina de abeto, cedro, açúcar, ambroxan, musgo de carvalho</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.14982.avif" alt="La Vie Est Belle – Lancôme" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.14982.avif" alt="La Vie Est Belle" class="foto">
           <div class="conteudo">
             <span class="codigo">06</span>
             <div class="nome">LA VIE EST BELLE</div>
             <div class="marca">Lancôme</div>
-            <div class="fragrancia">Fragrância: doce, envolvente e feminina.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>doce, baunilha, frutado, patchouli, amadeirado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>groselha preta, pera</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>íris, jasmim, flor de laranjeira</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>pralinê, baunilha, patchouli, fava tonka</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1733.avif" alt="Chloé Eau de Parfum – Chloé" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1733.avif" alt="Chloé Eau de Parfum" class="foto">
           <div class="conteudo">
             <span class="codigo">07</span>
             <div class="nome">CHLOÉ EAU DE PARFUM</div>
             <div class="marca">Chloé</div>
-            <div class="fragrancia">Fragrância: floral suave e romântica.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral, rosa, fresco, frutado, floral branco</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>peônia, lichia, frésia</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>rosa, lírio-do-vale, magnólia</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>cedro da Virgínia, âmbar</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.43871.avif" alt="Delina – Parfums de Marly" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.43871.avif" alt="Delina" class="foto">
           <div class="conteudo">
             <span class="codigo">08</span>
             <div class="nome">DELINA</div>
             <div class="marca">Parfums de Marly</div>
-            <div class="fragrancia">Fragrância: floral frutada e sofisticada.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>rosa, floral, frutado, fresco, almíscarado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>lichia, ruibarbo, bergamota, noz-moscada, groselha preta</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>rosa turca, peônia, almíscar, petalia, baunilha</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>cashmeran, incenso, cedro, vetiver do Haiti, caramelo</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.74962.avif" alt="Fame – Rabanne" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.74962.avif" alt="Fame" class="foto">
           <div class="conteudo">
             <span class="codigo">09</span>
             <div class="nome">FAME</div>
             <div class="marca">Rabanne</div>
-            <div class="fragrancia">Fragrância: moderna, cremosa e luminosa.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>tropical, baunilha, frutado, doce, amadeirado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>manga, bergamota</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>jasmim, olíbano</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, sândalo</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.51488.avif" alt="L’Interdit – Givenchy" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.51488.avif" alt="L’Interdit" class="foto">
           <div class="conteudo">
             <span class="codigo">10</span>
             <div class="nome">L’INTERDIT</div>
             <div class="marca">Givenchy</div>
-            <div class="fragrancia">Fragrância: floral elegante e marcante.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral branco, tuberosa, doce, cítrico, amadeirado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>pera, bergamota</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>tuberosa, flor de laranjeira, jasmim sambac</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>patchouli, baunilha, ambroxan, vetiver</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.39681.avif" alt="Good Girl – Carolina Herrera" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.39681.avif" alt="Good Girl" class="foto">
           <div class="conteudo">
             <span class="codigo">11</span>
             <div class="nome">GOOD GIRL</div>
             <div class="marca">Carolina Herrera</div>
-            <div class="fragrancia">Fragrância: doce, sensual e sofisticada.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>doce, floral branco, especiado quente, baunilha, âmbar</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>amêndoa, café, bergamota, limão</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>tuberosa, jasmim sambac, flor de laranjeira, rosa búlgara, raiz de orris</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>fava tonka, cacau, baunilha, pralinê, sândalo, almíscar, âmbar, cashmere, patchouli, canela, cedro</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9045.avif" alt="Lady Million – Rabanne" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9045.avif" alt="Lady Million" class="foto">
           <div class="conteudo">
             <span class="codigo">12</span>
             <div class="nome">LADY MILLION</div>
             <div class="marca">Rabanne</div>
-            <div class="fragrancia">Fragrância: floral doce e luxuosa.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral branco, doce, mel, cítrico, frutado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>framboesa, néroli, limão de Amalfi</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>jasmim, flor de laranjeira africana, gardênia</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>mel branco, patchouli, âmbar</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.62036.avif" alt="My Way – Giorgio Armani" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.62036.avif" alt="My Way" class="foto">
           <div class="conteudo">
             <span class="codigo">13</span>
             <div class="nome">MY WAY</div>
             <div class="marca">Giorgio Armani</div>
-            <div class="fragrancia">Fragrância: floral branco moderno e delicado.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral branco, tuberosa, cítrico, animálico, baunilha</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>flor de laranjeira, bergamota</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>tuberosa, jasmim indiano</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha de Madagascar, almíscar branco, cedro da Virgínia</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.59809.avif" alt="Ocean di Gioia – Giorgio Armani" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.59809.avif" alt="Ocean di Gioia" class="foto">
           <div class="conteudo">
             <span class="codigo">14</span>
             <div class="nome">OCEAN DI GIOIA</div>
             <div class="marca">Giorgio Armani</div>
-            <div class="fragrancia">Fragrância: aquática, floral e refrescante.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral branco, verde, fresco, frutado, cítrico</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>pera, notas verdes, cítricos</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>jasmim aquático, lírio-do-vale, sal, rosa</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar, sândalo</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.22857.avif" alt="212 VIP Rosé – Carolina Herrera" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.22857.avif" alt="212 VIP Rosé" class="foto">
           <div class="conteudo">
             <span class="codigo">15</span>
             <div class="nome">212 VIP ROSÉ</div>
             <div class="marca">Carolina Herrera</div>
-            <div class="fragrancia">Fragrância: floral frutada e festiva.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral, almíscarado, frutado, amadeirado, atalcado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>champanhe rosé, pimenta rosa</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>flor de pêssego, rosa</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar branco, notas amadeiradas</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.306.avif" alt="212 Sexy Women – Carolina Herrera" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.306.avif" alt="212 Sexy Women" class="foto">
           <div class="conteudo">
             <span class="codigo">16</span>
             <div class="nome">212 SEXY WOMEN</div>
             <div class="marca">Carolina Herrera</div>
-            <div class="fragrancia">Fragrância: doce, quente e sensual.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>doce, atalcado, almíscarado, picante suave, caramelo</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>pimenta rosa, mandarina, bergamota</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>algodão-doce, gardênia, flores, pelargônio, rosa</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, almíscar, sândalo, caramelo, patchouli, violeta</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.485.avif" alt="Light Blue – Dolce & Gabbana" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.485.avif" alt="Light Blue" class="foto">
           <div class="conteudo">
             <span class="codigo">17</span>
             <div class="nome">LIGHT BLUE</div>
             <div class="marca">Dolce &amp; Gabbana</div>
-            <div class="fragrancia">Fragrância: fresca, cítrica e leve.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>cítrico, amadeirado, fresco, frutado, aromático</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>limão siciliano, maçã, cedro, câmpanula</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>bambú, jasmim, rosa branca</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>cedro, almíscar, âmbar</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.64415.avif" alt="Lily Eau de Parfum – O Boticário" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.64415.avif" alt="Lily Eau de Parfum" class="foto">
           <div class="conteudo">
             <span class="codigo">18</span>
             <div class="nome">LILY EAU DE PARFUM</div>
             <div class="marca">O Boticário</div>
-            <div class="fragrancia">Fragrância: floral elegante e delicada.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>floral branco, frutado, atalcado, picante suave, floral</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>pêssego, damasco, pera, pimenta rosa, mandarina</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>lírio, jasmim, gardênia, osmanthus, narciso, íris, rosa, violeta</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar, baunilha, âmbar, sândalo, patchouli, vetiver, musgo</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.253.avif" alt="Euphoria – Calvin Klein" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.253.avif" alt="Euphoria" class="foto">
           <div class="conteudo">
             <span class="codigo">19</span>
             <div class="nome">EUPHORIA</div>
             <div class="marca">Calvin Klein</div>
-            <div class="fragrancia">Fragrância: frutal floral com toque exótico.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>amadeirado, floral, doce, atalcado, âmbar</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>romã, caqui, acorde verde</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>orquídea negra, lótus, champaca</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>mogno, âmbar, violeta negra, chantilly</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.704.avif" alt="Angel – Mugler" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.704.avif" alt="Angel" class="foto">
           <div class="conteudo">
             <span class="codigo">20</span>
             <div class="nome">ANGEL</div>
             <div class="marca">Mugler</div>
-            <div class="fragrancia">Fragrância: adocicada, marcante e poderosa.</div>
+            <div class="fragrancia">Inspiração olfativa feminina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>doce, patchouli, frutado, especiado quente, caramelo</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>algodão-doce, coco, cassis, melão, jasmim, bergamota, abacaxi, mandarina</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>mel, bagas vermelhas, amora, ameixa, damasco, jasmim, pêssego, noz-moscada, alcarávia, orquídea, rosa, lírio-do-vale</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>patchouli, chocolate, caramelo, baunilha, fava tonka, âmbar, almíscar, sândalo</span></div>
+            </div>
           </div>
         </div>
 
@@ -431,112 +579,178 @@
       <div class="grid">
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.410.avif" alt="Acqua di Giò – Giorgio Armani" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.410.avif" alt="Acqua di Giò" class="foto">
           <div class="conteudo">
             <span class="codigo">50</span>
             <div class="nome">ACQUA DI GIÒ</div>
             <div class="marca">Giorgio Armani</div>
-            <div class="fragrancia">Fragrância: fresca, aquática e elegante.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>cítrico, aromático, marinho, fresco especiado, floral</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>lima, limão, bergamota, jasmim, laranja, mandarina, néroli</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>notas oceânicas, jasmim, calone, alecrim, pêssego, frésia, jacinto, cyclamen, violeta, coentro, rosa, noz-moscada, resedá</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar branco, cedro, musgo de carvalho, patchouli, âmbar</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9828.avif" alt="Aventus – Creed" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9828.avif" alt="Aventus" class="foto">
           <div class="conteudo">
             <span class="codigo">51</span>
             <div class="nome">AVENTUS</div>
             <div class="marca">Creed</div>
-            <div class="fragrancia">Fragrância: frutada amadeirada e sofisticada.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>frutado, doce, amadeirado, couro, cítrico</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>bergamota, groselha preta, maçã, limão, pimenta rosa</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>abacaxi, patchouli, jasmim marroquino</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>bétula, almíscar, musgo de carvalho, cedro, ambroxan</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.3747.avif" alt="1 Million – Rabanne" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.3747.avif" alt="1 Million" class="foto">
           <div class="conteudo">
             <span class="codigo">52</span>
             <div class="nome">1 MILLION</div>
             <div class="marca">Rabanne</div>
-            <div class="fragrancia">Fragrância: doce especiada e marcante.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>especiado quente, canela, cítrico, âmbar, amadeirado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>mandarina sanguínea, toranja, hortelã</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>canela, notas especiadas, rosa</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>âmbar, couro, notas amadeiradas, patchouli indiano</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.297.avif" alt="212 Men – Carolina Herrera" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.297.avif" alt="212 Men" class="foto">
           <div class="conteudo">
             <span class="codigo">53</span>
             <div class="nome">212 MEN</div>
             <div class="marca">Carolina Herrera</div>
-            <div class="fragrancia">Fragrância: fresca, verde e moderna.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>cítrico, verde, fresco especiado, aromático, amadeirado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>notas verdes, toranja, especiarias, bergamota, lavanda, petitgrain</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>gengibre, violeta, gardênia, sálvia</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>almíscar, sândalo, incenso, vetiver, madeira guaiac, ládano</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.68074.avif" alt="Scandal Pour Homme – Jean Paul Gaultier" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.68074.avif" alt="Scandal Pour Homme" class="foto">
           <div class="conteudo">
             <span class="codigo">54</span>
             <div class="nome">SCANDAL POUR HOMME</div>
             <div class="marca">Jean Paul Gaultier</div>
-            <div class="fragrancia">Fragrância: intensa, doce e masculina.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>caramelo, aromático, doce, cítrico, baunilha</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>mandarina, sálvia esclaréia</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>caramelo, fava tonka</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>vetiver</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.46093.avif" alt="212 VIP Black – Carolina Herrera" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.46093.avif" alt="212 VIP Black" class="foto">
           <div class="conteudo">
             <span class="codigo">55</span>
             <div class="nome">212 VIP BLACK</div>
             <div class="marca">Carolina Herrera</div>
-            <div class="fragrancia">Fragrância: doce aromática e noturna.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>aromático, baunilha, picante suave, anis, lavanda</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>absinto, anis, erva-doce</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>lavanda</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>casca de baunilha negra, almíscar</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.383.avif" alt="Boss Bottled – Hugo Boss" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.383.avif" alt="Boss Bottled" class="foto">
           <div class="conteudo">
             <span class="codigo">56</span>
             <div class="nome">BOSS BOTTLED</div>
             <div class="marca">Hugo Boss</div>
-            <div class="fragrancia">Fragrância: amadeirada com toque frutado.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>amadeirado, frutado, baunilha, especiado quente, canela</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>maçã, ameixa, bergamota, limão, musgo de carvalho, gerânio</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>canela, mogno, cravo</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, sândalo, cedro, vetiver, oliveira</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.607.avif" alt="Allure Homme Sport – Chanel" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.607.avif" alt="Allure Homme Sport" class="foto">
           <div class="conteudo">
             <span class="codigo">57</span>
             <div class="nome">ALLURE HOMME SPORT</div>
             <div class="marca">Chanel</div>
-            <div class="fragrancia">Fragrância: cítrica amadeirada e energética.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>cítrico, aromático, baunilha, aldeídico, marinho</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>laranja, notas oceânicas, aldeídos, mandarina sanguínea</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>pimenta, néroli, cedro</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha, fava tonka, almíscar branco, âmbar, vetiver, resina de elemi</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.avif" alt="Sauvage – Dior" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.avif" alt="Sauvage" class="foto">
           <div class="conteudo">
             <span class="codigo">58</span>
             <div class="nome">SAUVAGE</div>
             <div class="marca">Dior</div>
-            <div class="fragrancia">Fragrância: aromática, fresca e poderosa.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>fresco especiado, âmbar, cítrico, aromático, almíscarado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>bergamota da Calábria, pimenta</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>pimenta de Szechuan, lavanda, pimenta rosa, vetiver, patchouli, gerânio, elemi</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>ambroxan, cedro, ládano</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.12865.avif" alt="212 VIP Men – Carolina Herrera" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.12865.avif" alt="212 VIP Men" class="foto">
           <div class="conteudo">
             <span class="codigo">59</span>
             <div class="nome">212 VIP MEN</div>
             <div class="marca">Carolina Herrera</div>
-            <div class="fragrancia">Fragrância: amadeirada com toque festivo.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>fresco especiado, aromático, vodka, amadeirado, verde</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>maracujá, lima, pimenta, gengibre</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>vodka, gin, hortelã, especiarias</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>âmbar, couro, notas amadeiradas</span></div>
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.18471.avif" alt="Invictus – Rabanne" class="foto">
+          <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.18471.avif" alt="Invictus" class="foto">
           <div class="conteudo">
             <span class="codigo">60</span>
             <div class="nome">INVICTUS</div>
             <div class="marca">Rabanne</div>
-            <div class="fragrancia">Fragrância: fresca, esportiva e vibrante.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>cítrico, marinho, aromático, fresco especiado, amadeirado</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>notas oceânicas, toranja, mandarina</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>folha de louro, jasmim</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>âmbar cinzento, madeira guaiac, musgo de carvalho, patchouli</span></div>
+            </div>
           </div>
         </div>
 
@@ -546,7 +760,13 @@
             <span class="codigo">61</span>
             <div class="nome">VERSACE EROS</div>
             <div class="marca">Versace</div>
-            <div class="fragrancia">Fragrância: aromática, sedutora e marcante.</div>
+            <div class="fragrancia">Inspiração olfativa masculina.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>baunilha, aromático, verde, fresco especiado, âmbar</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>hortelã, maçã verde, limão</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>fava tonka, ambroxan, gerânio</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>baunilha de Madagascar, cedro da Virgínia, cedro Atlas, vetiver, musgo de carvalho</span></div>
+            </div>
           </div>
         </div>
 
@@ -556,7 +776,7 @@
   </main>
 
   <footer>
-    © Perfumes MR - Todos os direitos reservados<br><br>
+    © Perfumes MR - Todos os direitos reservados<br>
     ⚠️ Este catálogo apresenta fragrâncias inspiradas em perfumes de marcas conhecidas.<br>
     Não possuímos vínculo com as marcas citadas.<br>
     Todos os nomes e referências são usados apenas como base olfativa.
