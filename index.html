@@ -3,124 +3,366 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perfumes MR | Catálogo Premium</title>
+  <title>MR Parfum | Catálogo de Luxo</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:#050505; --card:rgba(17,17,17,.92); --card-hover:rgba(26,26,26,.98);
-      --gold:#d4af37; --gold-soft:#f0d77a; --text:#f5f5f5; --muted:#cfcfcf;
-      --line:rgba(212,175,55,.25); --shadow:0 16px 40px rgba(0,0,0,.35);
+      --bg:#050505;
+      --bg-2:#0a0a0a;
+      --card:rgba(17,17,17,.94);
+      --card-hover:rgba(23,23,23,.98);
+      --gold:#d4af37;
+      --gold-soft:#f0d77a;
+      --gold-line:rgba(212,175,55,.20);
+      --text:#f5f5f5;
+      --muted:#cfcfcf;
+      --shadow:0 18px 42px rgba(0,0,0,.38);
+      --radius:24px;
     }
     html { scroll-behavior:smooth; }
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background:
-        radial-gradient(circle at top, rgba(212,175,55,.12), transparent 30%),
-        linear-gradient(180deg, #000 0%, #090909 100%);
-      color: var(--text);
-      min-height: 100vh;
+        radial-gradient(circle at top, rgba(212,175,55,.14), transparent 28%),
+        linear-gradient(180deg, #000 0%, #080808 35%, #0b0b0b 100%);
+      color:var(--text);
+      min-height:100vh;
     }
-    a { color: inherit; text-decoration: none; }
+    a { color:inherit; text-decoration:none; }
     header {
-      padding: 34px 20px 24px;
-      text-align: center;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px);
+      padding:34px 20px 24px;
+      border-bottom:1px solid var(--gold-line);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
     }
     .top-badge {
-      display:inline-block; padding:8px 14px; border:1px solid var(--line); border-radius:999px;
-      color:var(--gold-soft); font-size:12px; letter-spacing:2px; text-transform:uppercase;
-      margin-bottom:14px; background:rgba(212,175,55,.08);
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid var(--gold-line);
+      border-radius:999px;
+      color:var(--gold-soft);
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:14px;
+      background:rgba(212,175,55,.08);
     }
     .brand-block {
-      max-width: 880px; margin: 0 auto 12px; display:grid; grid-template-columns: 160px 1fr;
-      gap: 22px; align-items:center; text-align:left;
-      background: linear-gradient(135deg, rgba(212,175,55,.07), rgba(255,255,255,.02));
-      border:1px solid var(--line); border-radius: 28px; padding: 18px;
-      box-shadow: var(--shadow);
+      max-width:1180px;
+      margin:0 auto 14px;
+      display:grid;
+      grid-template-columns:170px 1fr;
+      gap:22px;
+      align-items:center;
+      background:linear-gradient(135deg, rgba(212,175,55,.08), rgba(255,255,255,.02));
+      border:1px solid var(--gold-line);
+      border-radius:30px;
+      padding:20px;
+      box-shadow:var(--shadow);
     }
     .logo-wrap {
-      background:#000; border:1px solid rgba(255,255,255,.08); border-radius:22px; overflow:hidden;
-      aspect-ratio: 1 / 1; display:flex; align-items:center; justify-content:center;
+      background:#000;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      overflow:hidden;
+      aspect-ratio:1/1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .logo-wrap img { width:100%; height:100%; object-fit:cover; }
+    .logo-wrap img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
     .hero h1 {
-      font-size: 34px; line-height: 1.15; color: var(--gold); margin-bottom: 10px; letter-spacing:.5px;
+      color:var(--gold);
+      font-size:36px;
+      line-height:1.12;
+      margin-bottom:10px;
+      letter-spacing:.4px;
     }
-    .hero p { color:#d8d8d8; font-size:15px; line-height:1.65; }
-    .aviso {
-      margin-top: 10px; color: var(--gold-soft); font-size: 14px; line-height: 1.6;
+    .hero p {
+      color:#d8d8d8;
+      font-size:15px;
+      line-height:1.65;
+      margin-bottom:8px;
     }
-    .top-actions {
-      max-width: 1280px; margin: 18px auto 0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    .hero .aviso {
+      color:var(--gold-soft);
+      font-size:14px;
     }
-    .nav-btn {
-      border:1px solid rgba(212,175,55,.35); background:rgba(212,175,55,.08); color:var(--gold-soft);
-      padding:10px 16px; border-radius:999px; font-size:13px; transition:.2s ease;
+    .filters-panel {
+      max-width:1180px;
+      margin:0 auto;
+      display:grid;
+      gap:12px;
     }
-    .nav-btn:hover { background:rgba(212,175,55,.16); border-color:rgba(212,175,55,.55); }
-    .busca-wrap { max-width:1280px; margin:18px auto 0; display:flex; justify-content:center; }
+    .filter-row {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .filter-btn {
+      border:1px solid rgba(212,175,55,.32);
+      background:rgba(212,175,55,.08);
+      color:var(--gold-soft);
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:13px;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background:rgba(212,175,55,.18);
+      border-color:rgba(212,175,55,.58);
+      color:#fff2c1;
+      transform:translateY(-1px);
+    }
+    .busca-wrap {
+      max-width:1180px;
+      margin:2px auto 0;
+      display:flex;
+      justify-content:center;
+    }
     .busca {
-      width:min(760px,100%); padding:14px 18px; border-radius:16px; border:1px solid rgba(212,175,55,.22);
-      background:rgba(15,15,15,.92); color:white; outline:none; font-size:15px; box-shadow:var(--shadow);
+      width:min(780px,100%);
+      padding:14px 18px;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.22);
+      background:rgba(15,15,15,.92);
+      color:white;
+      outline:none;
+      font-size:15px;
+      box-shadow:var(--shadow);
     }
-    .container { max-width:1280px; margin:0 auto; padding:28px 20px 50px; }
-    .resultado-busca { margin-bottom: 10px; color: var(--gold-soft); min-height: 20px; font-size: 14px; }
-    .secao { margin-top: 28px; scroll-margin-top: 170px; }
+    .container {
+      max-width:1280px;
+      margin:0 auto;
+      padding:28px 20px 54px;
+    }
+    .resultado-busca {
+      margin-bottom:12px;
+      color:var(--gold-soft);
+      min-height:20px;
+      font-size:14px;
+    }
+    .summary-strip {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+      margin-bottom:26px;
+    }
+    .summary-card {
+      background:linear-gradient(135deg, rgba(212,175,55,.09), rgba(255,255,255,.02));
+      border:1px solid var(--gold-line);
+      border-radius:20px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .summary-card .label {
+      color:var(--gold-soft);
+      font-size:12px;
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .summary-card .value {
+      font-size:26px;
+      color:#fff;
+      font-weight:700;
+    }
+    .summary-card .small {
+      margin-top:6px;
+      color:#c8c8c8;
+      font-size:13px;
+      line-height:1.45;
+    }
+    .secao {
+      margin-top:30px;
+      scroll-margin-top:220px;
+    }
     .secao h2 {
-      color:var(--gold); font-size:24px; margin-bottom:18px; padding-bottom:10px;
-      border-bottom:1px solid var(--line); letter-spacing:.5px;
+      color:var(--gold);
+      font-size:24px;
+      margin-bottom:8px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--gold-line);
+      letter-spacing:.4px;
     }
-    .grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:18px; }
+    .secao .subtitulo {
+      color:#cfcfcf;
+      font-size:14px;
+      line-height:1.6;
+      margin-bottom:16px;
+      max-width:900px;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
     .item {
-      background:var(--card); border:1px solid rgba(212,175,55,.14); border-radius:22px; overflow:hidden;
-      box-shadow:var(--shadow); transition:transform .25s ease, border-color .25s ease, background .25s ease;
+      background:var(--card);
+      border:1px solid rgba(212,175,55,.14);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .25s ease, border-color .25s ease, background .25s ease;
     }
-    .item:hover { transform:translateY(-4px); background:var(--card-hover); border-color:rgba(212,175,55,.42); }
+    .item:hover {
+      transform:translateY(-4px);
+      background:var(--card-hover);
+      border-color:rgba(212,175,55,.42);
+    }
     .hidden { display:none !important; }
-    .foto { width:100%; height:300px; object-fit:cover; background:#111; }
-    .conteudo { padding:16px; }
-    .codigo {
-      display:inline-block; font-size:12px; font-weight:700; color:var(--gold-soft);
-      background:rgba(212,175,55,.12); border:1px solid rgba(212,175,55,.22);
-      padding:6px 10px; border-radius:999px; margin-bottom:12px;
+    .foto {
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      background:#111;
     }
-    .nome { font-size:19px; font-weight:700; line-height:1.35; margin-bottom:6px; }
-    .marca { font-size:14px; color:var(--gold-soft); margin-bottom:10px; }
-    .fragrancia { font-size:14px; color:var(--muted); line-height:1.5; }
-    .notas { margin-top:14px; padding-top:12px; border-top:1px solid rgba(212,175,55,.18); }
+    .visual-luxo {
+      height:220px;
+      background:
+        radial-gradient(circle at top, rgba(240,215,122,.18), transparent 26%),
+        linear-gradient(160deg, #121212 0%, #0a0a0a 48%, #17130a 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .visual-luxo::before {
+      content:"";
+      position:absolute;
+      inset:16px;
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:20px;
+    }
+    .monograma {
+      width:104px;
+      height:104px;
+      border-radius:50%;
+      border:1px solid rgba(212,175,55,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--gold-soft);
+      font-size:28px;
+      letter-spacing:1px;
+      background:rgba(212,175,55,.05);
+      box-shadow:0 0 30px rgba(212,175,55,.08) inset;
+      z-index:1;
+      text-align:center;
+      line-height:1.1;
+      padding:10px;
+    }
+    .conteudo { padding:16px; }
+    .top-tags {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .codigo, .chip {
+      display:inline-block;
+      font-size:12px;
+      font-weight:700;
+      color:var(--gold-soft);
+      background:rgba(212,175,55,.12);
+      border:1px solid rgba(212,175,55,.22);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .nome {
+      font-size:19px;
+      font-weight:700;
+      line-height:1.35;
+      margin-bottom:6px;
+    }
+    .marca {
+      font-size:14px;
+      color:var(--gold-soft);
+      margin-bottom:10px;
+    }
+    .fragrancia {
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+    .notas {
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid rgba(212,175,55,.18);
+    }
     .bloco-nota { margin-bottom:10px; }
-    .bloco-nota strong { display:block; color:var(--gold-soft); font-size:13px; margin-bottom:4px; }
-    .bloco-nota span { display:block; color:#cfcfcf; font-size:13px; line-height:1.5; }
+    .bloco-nota strong {
+      display:block;
+      color:var(--gold-soft);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .bloco-nota span {
+      display:block;
+      color:#cfcfcf;
+      font-size:13px;
+      line-height:1.5;
+    }
     .topo-btn {
-      position:fixed; right:18px; bottom:24px; width:48px; height:48px; border-radius:50%;
-      border:1px solid rgba(212,175,55,.4); background:rgba(15,15,15,.92); color:var(--gold);
-      display:flex; align-items:center; justify-content:center; font-size:22px; box-shadow:var(--shadow); z-index:30;
+      position:fixed;
+      right:18px;
+      bottom:24px;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:1px solid rgba(212,175,55,.4);
+      background:rgba(15,15,15,.92);
+      color:var(--gold);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      box-shadow:var(--shadow);
+      z-index:40;
     }
     footer {
-      text-align:center; color:#999; border-top:1px solid var(--line); padding:24px 20px 34px; font-size:14px; line-height:1.8;
+      text-align:center;
+      color:#999;
+      border-top:1px solid var(--gold-line);
+      padding:24px 20px 34px;
+      font-size:14px;
+      line-height:1.8;
     }
-    @media (max-width: 1024px) {
-      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .foto { height:260px; }
-      .brand-block { grid-template-columns: 130px 1fr; }
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+      .summary-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .brand-block { grid-template-columns:140px 1fr; }
       .hero h1 { font-size:30px; }
+      .foto { height:260px; }
     }
     @media (max-width: 700px) {
       header { position:static; padding:22px 14px 18px; }
       .top-badge { font-size:10px; letter-spacing:1.5px; padding:7px 12px; margin-bottom:10px; }
-      .brand-block { grid-template-columns: 1fr; text-align:center; gap:14px; padding:14px; border-radius:22px; }
+      .brand-block { grid-template-columns:1fr; text-align:center; gap:14px; padding:14px; border-radius:22px; }
       .logo-wrap { width:132px; margin:0 auto; border-radius:18px; }
       .hero h1 { font-size:22px; margin-bottom:8px; }
-      .hero p, .aviso { font-size:13px; }
-      .nav-btn { font-size:12px; padding:9px 12px; }
+      .hero p, .hero .aviso { font-size:13px; }
+      .filter-btn { font-size:12px; padding:9px 12px; }
       .busca { font-size:14px; padding:12px 14px; border-radius:14px; }
       .container { padding:18px 12px 36px; }
-      .secao { margin-top:20px; scroll-margin-top:20px; }
-      .secao h2 { font-size:19px; margin-bottom:14px; }
-      .grid { grid-template-columns: 1fr; gap:14px; }
+      .summary-strip { grid-template-columns:1fr; gap:12px; }
+      .secao { margin-top:22px; scroll-margin-top:20px; }
+      .secao h2 { font-size:19px; margin-bottom:10px; }
+      .secao .subtitulo { font-size:13px; margin-bottom:14px; }
+      .grid { grid-template-columns:1fr; gap:14px; }
       .foto { height:220px; }
+      .visual-luxo { height:180px; }
       .conteudo { padding:14px; }
       .nome { font-size:17px; }
       .marca, .fragrancia, .bloco-nota strong, .bloco-nota span { font-size:12px; }
@@ -131,98 +373,275 @@
 </head>
 <body id="topo">
   <header>
-    <div class="top-badge">Catálogo Premium MR</div>
+    <div class="top-badge">Catálogo de Luxo MR</div>
     <div class="brand-block">
       <div class="logo-wrap">
         <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAFBARoDASIAAhEBAxEB/8QAHgABAAICAwEBAQAAAAAAAAAAAAgJBQcCAwYBBAr/xABDEAABAwMDAgQEBAQDBwEJAAABAAIDBAUGBwgREiEJEzFBIjJRYRQVQnEjUoGRFjNyFxgkQ1NisaElNERjc4KiwfD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AqqREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEWUxnHLvlt/tuM2C3y11yu1XFRUlPE3l800jg1jB9ySFKDXjw4NZtvmk0urmW3WwVdupH07K6mpKlxmpTM9sbPmaGv+N7Qek/3CCJaIiAi5Rs63AcHueFKfQHw5twOvduhyektEOL4xMA+K7XzqhbOz3fFFx1vb2+bgN+6CKyKxp3hDw3u0XNunW5fE8pyG0t4qbXSwtLY5faN745nujJ9AXMVe+S2G4Ytfq/HLvTmnrrZUyUlTCfWOVji17T+xBQY1ERAREQEREBERAREQET1WyNFtA9Stfsrhw7THGKu7VrwHzytb009JH/ANSaU/DG3v6k9/QAlBrlkb5PlaT+y+yRPjPD28duVZ83bjtA2AYnBlG5G4Q6j6iV0XmUGOxNBhY/j1bAf0DuDLN2P6W8qu7VfLrRnueXvMbFilvxmgu1Y+pgtFv5/D0TDxxGzn9uT6DkngAcBB49ERAREQEREBERAREQEREBc4YjKS0Ec8chcAOVu3aRtxyLcrrNatPbaHQW4OFXeK7j4aWiY4GRwPp1uHwsH8zh7coJxeEptSkjEm5jN7Lwxhko8XZUM+Y92TVjQfYd42n7PI9itVeKJvDGrOeu0SwWtc7EcSnc2vmjf8NxuLeQ5w+rIu7W8+ruo+nSpjb/ALcjZdo+hNv0i0wEFsyK90H5VaYogOq229jRHJUAfzccsaT+ok/pVJFbU/iagzue5738lznHuSSTz/6oPzBZiwYvesoulHZMet1TcbjXytgpqWlhdLLNI48BrWt7kklZfTLSvONXMzt2CYFYKi73i5SBkUEI56W/qkefRrGj4nOPAAVjcI0O8LbB46iugoc616vlEXMYeHQ2trhwOOO8UQPPc/xJCDx0t44DH6T7WdC9j+EUmuO8WtobzlU4EljxKMNnMU3qP4fpNIO3Lnfwme/JUeN0/iFaxbgqyayWuqkxDCm8xU9ktkxjM0Y9DUSDgyHj9I4aPp7rQGq2r2f6z5lW5zqFkdVdbpWu5L5H/BEz2jjYOzGD2aO37numkWm2Sayaj4/pri9K+puV+rY6WIcciNpPL5Hf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7IPFotgf7vOvwY+Q6HagdMccUz3f4ZreGxyuLY3H+H2DnAhp9CQQOVLbVLadguleGRadz7c9QsizG6YNQ3C1ZNZ7Zc6l8uSTPe6alexkn4aOKGNo5j8l8vDiSQQCQgSv0UlfVULzJSVEkLz+pji0/wDos/HpbqdNZq/IotOcofabVUGlr69toqDT0s4f0GOWTo6Y3h5DelxB6jx6rPM23biZHObHoJqM8sgbUuDcWriWwnniQ/wuzT0u4d6dj9EHgJql044eB9Se/JK6V62/aQas4rjsOX5RpfltnsNQWNhulfZKmnpJC/uwNmewMPPtwe68kgIiICIiAuxk8jBw0jj9l1og7xW1A4Akd0g8hvJ4XXJK+T5j6egXBEBERAREQEREBERAREQEREBERAREQEREBSU8O+ps9h3V4fnOT5TjeP2LHH1c9wrb3fKO3MY2SjniZ0fiJGGUl72gtjDiOeSAO6jWiCW953A3ek1Or9DLRccH0ywi/ZtDXZBkOIym5Or4fxIljqJqx9TUtlY0Oa8sjc2Np6muaAHMW/8AVC9ab3XCdydus+qOFVN5zQ22a1VFXqJZ6iXIHUkjS6sbHAYqakeW8ARdpXdHPB4BNZKIJ07rNYdR7PhOl2E4Frjjl2pLvpzQ4ZlcFuy22XNhrCAKhkzvNeYA7hodUcsaQODJwOF73PtR8HxXfLoTqz/tSxCbErbjtosF2uFoyihrm008cU7ZY6hlNM97Iw58fMj2iP36jweK2UQWEWqmtlv0V3P4VWauaayXDNr4y44zQt1AtD21lP8AjJJXSMd+J8thLSD0Oc2Tt3aORz6S2XuxUGrm0W7T6v6ei2af4vT0ORyNz+0OjtlQyMiVj+KrgkgtHLeQ7jgE8KtNEFgrKy0VOk+7Wy3TU/AJ6/NMmFfj0Eud2iR9xiZVOm8yLmqPPETo+PckdA+JpaK+kRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/2Q==" alt="Logo MR Parfum">
       </div>
       <div class="hero">
         <h1>MR Parfum</h1>
-        <p>Catálogo premium com imagens, acordes e notas olfativas das inspirações disponíveis, com visual mais luxuoso e melhor adaptação para celular.</p>
-        <p class="aviso">⚠️ Todos os perfumes apresentados são inspirações olfativas das fragrâncias mencionadas. Não comercializamos produtos originais das marcas citadas.</p>
+        <p>Catálogo completo com perfumes, body splash, home spray e difusores de ambiente em uma apresentação premium, elegante e pronta para vitrine digital.</p>
+        <p class="aviso">⚠️ Todos os itens inspirados em perfumes são referências olfativas. Não comercializamos produtos originais das marcas citadas.</p>
       </div>
     </div>
-    <div class="top-actions">
-      <a href="#femininos" class="nav-btn">🌸 Femininos</a>
-      <a href="#masculinos" class="nav-btn">🔥 Masculinos</a>
+
+    <div class="filters-panel">
+      <div class="filter-row" id="genderFilters">
+        <button class="filter-btn active" data-group="gender" data-filter="todos">✨ Todos</button>
+        <button class="filter-btn" data-group="gender" data-filter="feminino">🌸 Feminino</button>
+        <button class="filter-btn" data-group="gender" data-filter="masculino">🔥 Masculino</button>
+        <button class="filter-btn" data-group="gender" data-filter="ambiente">🏠 Ambiente</button>
+      </div>
+
+      <div class="filter-row" id="typeFilters">
+        <button class="filter-btn active" data-group="type" data-filter="todos">Todos os tipos</button>
+        <button class="filter-btn" data-group="type" data-filter="perfume">Perfumes</button>
+        <button class="filter-btn" data-group="type" data-filter="body-splash">Body Splash</button>
+        <button class="filter-btn" data-group="type" data-filter="home-spray">Home Spray</button>
+        <button class="filter-btn" data-group="type" data-filter="difusor">Difusores</button>
+      </div>
     </div>
+
     <div class="busca-wrap">
-      <input type="text" id="buscaPerfume" class="busca" placeholder="Buscar por nome, marca, acorde ou nota olfativa..." />
+      <input type="text" id="buscaPerfume" class="busca" placeholder="Buscar por nome, marca, inspiração, acorde, nota olfativa ou tipo..." />
     </div>
   </header>
 
   <main class="container">
-    <div id="resultadoBusca" class="resultado-busca"></div>
+    <div class="resultado-busca" id="resultadoBusca"></div>
 
-    <section class="secao" id="femininos">
-      <h2>🌸 Femininos</h2>
-      <div class="grid" id="grid-femininos"></div>
+    <section class="summary-strip">
+      <div class="summary-card">
+        <div class="label">Perfumes</div>
+        <div class="value">32</div>
+        <div class="small">Catálogo completo com inspirações femininas e masculinas.</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Body Splash</div>
+        <div class="value">28</div>
+        <div class="small">Linha leve e prática para uso diário, em versões femininas e masculinas.</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Casa Perfumada</div>
+        <div class="value">16</div>
+        <div class="small">Mesmas essências disponíveis para Home Spray e Difusores de Ambiente.</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Total no catálogo</div>
+        <div class="value">76</div>
+        <div class="small">Tudo reunido em um catálogo de loja com visual premium.</div>
+      </div>
     </section>
 
-    <section class="secao" id="masculinos">
-      <h2>🔥 Masculinos</h2>
-      <div class="grid" id="grid-masculinos"></div>
+    <section class="secao" id="perfumes-femininos">
+      <h2>🌸 Perfumes Femininos</h2>
+      <p class="subtitulo">Seleção completa de inspirações femininas com imagem, acordes principais e pirâmide olfativa.</p>
+      <div class="grid" id="grid-perfumes-femininos"></div>
+    </section>
+
+    <section class="secao" id="perfumes-masculinos">
+      <h2>🔥 Perfumes Masculinos</h2>
+      <p class="subtitulo">Linha masculina completa com presença marcante, frescor elegante e perfis olfativos variados.</p>
+      <div class="grid" id="grid-perfumes-masculinos"></div>
+    </section>
+
+    <section class="secao" id="body-splash-feminino">
+      <h2>✨ Body Splash Feminino</h2>
+      <p class="subtitulo">Versões leves, sofisticadas e versáteis, ideais para o dia a dia, inspiradas nas fragrâncias mais desejadas.</p>
+      <div class="grid" id="grid-body-feminino"></div>
+    </section>
+
+    <section class="secao" id="body-splash-masculino">
+      <h2>🖤 Body Splash Masculino</h2>
+      <p class="subtitulo">Body splash masculinos com assinatura olfativa moderna, fresca e marcante.</p>
+      <div class="grid" id="grid-body-masculino"></div>
+    </section>
+
+    <section class="secao" id="home-spray">
+      <h2>🏠 Home Spray</h2>
+      <p class="subtitulo">Essências para perfumar ambientes com sofisticação, aconchego e presença memorável.</p>
+      <div class="grid" id="grid-home-spray"></div>
+    </section>
+
+    <section class="secao" id="difusores">
+      <h2>🕯️ Difusores de Ambiente</h2>
+      <p class="subtitulo">Difusores elegantes para manter o ambiente perfumado por mais tempo, com as mesmas essências disponíveis da linha ambiente.</p>
+      <div class="grid" id="grid-difusores"></div>
     </section>
   </main>
 
   <a href="#topo" class="topo-btn" aria-label="Voltar ao topo">↑</a>
 
   <footer>
-    © Perfumes MR - Todos os direitos reservados<br>
-    ⚠️ Este catálogo apresenta fragrâncias inspiradas em perfumes de marcas conhecidas.<br>
-    Não possuímos vínculo com as marcas citadas.<br>
-    Todos os nomes e referências são usados apenas como base olfativa.
+    © MR Parfum - Catálogo digital premium<br>
+    Perfumes, body splash, home spray e difusores de ambiente em apresentação de loja de luxo.<br>
+    ⚠️ Os nomes citados em inspirações são usados apenas como referência olfativa.
   </footer>
 
   <script>
     const perfumes = [{"codigo": "01", "nome": "SCANDAL POUR FEMME", "marca": "Jean Paul Gaultier", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.45651.avif", "acordes": "mel, doce, floral branco, cítrico, caramelo", "topo": "laranja sanguínea, mandarina", "coracao": "mel, gardênia, flor de laranjeira, jasmim, pêssego", "fundo": "cera de abelha, caramelo, patchouli, alcaçuz"}, {"codigo": "02", "nome": "COCO MADEMOISELLE", "marca": "Chanel", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.611.avif", "acordes": "cítrico, amadeirado, patchouli, doce, floral branco", "topo": "laranja, mandarina, bergamota, flor de laranjeira", "coracao": "rosa turca, jasmim, mimosa, ylang ylang", "fundo": "patchouli, almíscar branco, baunilha, vetiver, fava tonka, opoponax"}, {"codigo": "03", "nome": "LIBRE", "marca": "Yves Saint Laurent", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56077.avif", "acordes": "floral branco, cítrico, lavanda, baunilha, aromático", "topo": "lavanda, mandarina, groselha preta, petitgrain", "coracao": "lavanda, flor de laranjeira, jasmim", "fundo": "baunilha de Madagascar, almíscar, cedro, âmbar cinzento"}, {"codigo": "04", "nome": "OLYMPÉA", "marca": "Rabanne", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31666.avif", "acordes": "baunilha, salgado, floral branco, amadeirado, âmbar", "topo": "jasmim aquático, mandarina verde, flor de gengibre", "coracao": "baunilha, sal", "fundo": "madeira de cashmere, âmbar cinzento, sândalo"}, {"codigo": "05", "nome": "BACCARAT ROUGE 540", "marca": "Maison Francis Kurkdjian", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.avif", "acordes": "amadeirado, âmbar, especiado quente, metálico, fresco especiado", "topo": "açafrão, jasmim", "coracao": "madeira de âmbar, âmbar cinzento, hedione", "fundo": "resina de abeto, cedro, açúcar, ambroxan, musgo de carvalho"}, {"codigo": "06", "nome": "LA VIE EST BELLE", "marca": "Lancôme", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.14982.avif", "acordes": "doce, baunilha, frutado, patchouli, amadeirado", "topo": "groselha preta, pera", "coracao": "íris, jasmim, flor de laranjeira", "fundo": "pralinê, baunilha, patchouli, fava tonka"}, {"codigo": "07", "nome": "CHLOÉ EAU DE PARFUM", "marca": "Chloé", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1733.avif", "acordes": "floral, rosa, fresco, frutado, floral branco", "topo": "peônia, lichia, frésia", "coracao": "rosa, lírio-do-vale, magnólia", "fundo": "cedro da Virgínia, âmbar"}, {"codigo": "08", "nome": "DELINA", "marca": "Parfums de Marly", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.43871.avif", "acordes": "rosa, floral, frutado, fresco, almíscarado", "topo": "lichia, ruibarbo, bergamota, noz-moscada, groselha preta", "coracao": "rosa turca, peônia, almíscar, petalia, baunilha", "fundo": "cashmeran, incenso, cedro, vetiver do Haiti, caramelo"}, {"codigo": "09", "nome": "FAME", "marca": "Rabanne", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.74962.avif", "acordes": "tropical, baunilha, frutado, doce, amadeirado", "topo": "manga, bergamota", "coracao": "jasmim, olíbano", "fundo": "baunilha, sândalo"}, {"codigo": "10", "nome": "L’INTERDIT", "marca": "Givenchy", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.51488.avif", "acordes": "floral branco, tuberosa, doce, cítrico, amadeirado", "topo": "pera, bergamota", "coracao": "tuberosa, flor de laranjeira, jasmim sambac", "fundo": "patchouli, baunilha, ambroxan, vetiver"}, {"codigo": "11", "nome": "GOOD GIRL", "marca": "Carolina Herrera", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.39681.avif", "acordes": "doce, floral branco, especiado quente, baunilha, âmbar", "topo": "amêndoa, café, bergamota, limão", "coracao": "tuberosa, jasmim sambac, flor de laranjeira, rosa búlgara, raiz de orris", "fundo": "fava tonka, cacau, baunilha, pralinê, sândalo, almíscar, âmbar, cashmere, patchouli, canela, cedro"}, {"codigo": "12", "nome": "LADY MILLION", "marca": "Rabanne", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9045.avif", "acordes": "floral branco, doce, mel, cítrico, frutado", "topo": "framboesa, néroli, limão de Amalfi", "coracao": "jasmim, flor de laranjeira africana, gardênia", "fundo": "mel branco, patchouli, âmbar"}, {"codigo": "13", "nome": "MY WAY", "marca": "Giorgio Armani", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.62036.avif", "acordes": "floral branco, tuberosa, cítrico, animálico, baunilha", "topo": "flor de laranjeira, bergamota", "coracao": "tuberosa, jasmim indiano", "fundo": "baunilha de Madagascar, almíscar branco, cedro da Virgínia"}, {"codigo": "14", "nome": "OCEAN DI GIOIA", "marca": "Giorgio Armani", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.59809.avif", "acordes": "floral branco, verde, fresco, frutado, cítrico", "topo": "pera, notas verdes, cítricos", "coracao": "jasmim aquático, lírio-do-vale, sal, rosa", "fundo": "almíscar, sândalo"}, {"codigo": "15", "nome": "212 VIP ROSÉ", "marca": "Carolina Herrera", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.22857.avif", "acordes": "floral, almíscarado, frutado, amadeirado, atalcado", "topo": "champanhe rosé, pimenta rosa", "coracao": "flor de pêssego, rosa", "fundo": "almíscar branco, notas amadeiradas"}, {"codigo": "16", "nome": "212 SEXY WOMEN", "marca": "Carolina Herrera", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.306.avif", "acordes": "doce, atalcado, almíscarado, picante suave, caramelo", "topo": "pimenta rosa, mandarina, bergamota", "coracao": "algodão-doce, gardênia, flores, pelargônio, rosa", "fundo": "baunilha, almíscar, sândalo, caramelo, patchouli, violeta"}, {"codigo": "17", "nome": "LIGHT BLUE", "marca": "Dolce & Gabbana", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.485.avif", "acordes": "cítrico, amadeirado, fresco, frutado, aromático", "topo": "limão siciliano, maçã, cedro, câmpanula", "coracao": "bambú, jasmim, rosa branca", "fundo": "cedro, almíscar, âmbar"}, {"codigo": "18", "nome": "LILY EAU DE PARFUM", "marca": "O Boticário", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.64415.avif", "acordes": "floral branco, frutado, atalcado, picante suave, floral", "topo": "pêssego, damasco, pera, pimenta rosa, mandarina", "coracao": "lírio, jasmim, gardênia, osmanthus, narciso, íris, rosa, violeta", "fundo": "almíscar, baunilha, âmbar, sândalo, patchouli, vetiver, musgo"}, {"codigo": "19", "nome": "EUPHORIA", "marca": "Calvin Klein", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.253.avif", "acordes": "amadeirado, floral, doce, atalcado, âmbar", "topo": "romã, caqui, acorde verde", "coracao": "orquídea negra, lótus, champaca", "fundo": "mogno, âmbar, violeta negra, chantilly"}, {"codigo": "20", "nome": "ANGEL", "marca": "Mugler", "categoria": "Femininos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.704.avif", "acordes": "doce, patchouli, frutado, especiado quente, caramelo", "topo": "algodão-doce, coco, cassis, melão, jasmim, bergamota, abacaxi, mandarina", "coracao": "mel, bagas vermelhas, amora, ameixa, damasco, jasmim, pêssego, noz-moscada, alcarávia, orquídea, rosa, lírio-do-vale", "fundo": "patchouli, chocolate, caramelo, baunilha, fava tonka, âmbar, almíscar, sândalo"}, {"codigo": "50", "nome": "ACQUA DI GIÒ", "marca": "Giorgio Armani", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.410.avif", "acordes": "cítrico, aromático, marinho, fresco especiado, floral", "topo": "lima, limão, bergamota, jasmim, laranja, mandarina, néroli", "coracao": "notas oceânicas, jasmim, calone, alecrim, pêssego, frésia, jacinto, cyclamen, violeta, coentro, rosa, noz-moscada, resedá", "fundo": "almíscar branco, cedro, musgo de carvalho, patchouli, âmbar"}, {"codigo": "51", "nome": "AVENTUS", "marca": "Creed", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9828.avif", "acordes": "frutado, doce, amadeirado, couro, cítrico", "topo": "bergamota, groselha preta, maçã, limão, pimenta rosa", "coracao": "abacaxi, patchouli, jasmim marroquino", "fundo": "bétula, almíscar, musgo de carvalho, cedro, ambroxan"}, {"codigo": "52", "nome": "1 MILLION", "marca": "Rabanne", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.3747.avif", "acordes": "especiado quente, canela, cítrico, âmbar, amadeirado", "topo": "mandarina sanguínea, toranja, hortelã", "coracao": "canela, notas especiadas, rosa", "fundo": "âmbar, couro, notas amadeiradas, patchouli indiano"}, {"codigo": "53", "nome": "212 MEN", "marca": "Carolina Herrera", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.297.avif", "acordes": "cítrico, verde, fresco especiado, aromático, amadeirado", "topo": "notas verdes, toranja, especiarias, bergamota, lavanda, petitgrain", "coracao": "gengibre, violeta, gardênia, sálvia", "fundo": "almíscar, sândalo, incenso, vetiver, madeira guaiac, ládano"}, {"codigo": "54", "nome": "SCANDAL POUR HOMME", "marca": "Jean Paul Gaultier", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.68074.avif", "acordes": "caramelo, aromático, doce, cítrico, baunilha", "topo": "mandarina, sálvia esclaréia", "coracao": "caramelo, fava tonka", "fundo": "vetiver"}, {"codigo": "55", "nome": "212 VIP BLACK", "marca": "Carolina Herrera", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.46093.avif", "acordes": "aromático, baunilha, picante suave, anis, lavanda", "topo": "absinto, anis, erva-doce", "coracao": "lavanda", "fundo": "casca de baunilha negra, almíscar"}, {"codigo": "56", "nome": "BOSS BOTTLED", "marca": "Hugo Boss", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.383.avif", "acordes": "amadeirado, frutado, baunilha, especiado quente, canela", "topo": "maçã, ameixa, bergamota, limão, musgo de carvalho, gerânio", "coracao": "canela, mogno, cravo", "fundo": "baunilha, sândalo, cedro, vetiver, oliveira"}, {"codigo": "57", "nome": "ALLURE HOMME SPORT", "marca": "Chanel", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.607.avif", "acordes": "cítrico, aromático, baunilha, aldeídico, marinho", "topo": "laranja, notas oceânicas, aldeídos, mandarina sanguínea", "coracao": "pimenta, néroli, cedro", "fundo": "baunilha, fava tonka, almíscar branco, âmbar, vetiver, resina de elemi"}, {"codigo": "58", "nome": "SAUVAGE", "marca": "Dior", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.avif", "acordes": "fresco especiado, âmbar, cítrico, aromático, almíscarado", "topo": "bergamota da Calábria, pimenta", "coracao": "pimenta de Szechuan, lavanda, pimenta rosa, vetiver, patchouli, gerânio, elemi", "fundo": "ambroxan, cedro, ládano"}, {"codigo": "59", "nome": "212 VIP MEN", "marca": "Carolina Herrera", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.12865.avif", "acordes": "fresco especiado, aromático, vodka, amadeirado, verde", "topo": "maracujá, lima, pimenta, gengibre", "coracao": "vodka, gin, hortelã, especiarias", "fundo": "âmbar, couro, notas amadeiradas"}, {"codigo": "60", "nome": "INVICTUS", "marca": "Rabanne", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.18471.avif", "acordes": "cítrico, marinho, aromático, fresco especiado, amadeirado", "topo": "notas oceânicas, toranja, mandarina", "coracao": "folha de louro, jasmim", "fundo": "âmbar cinzento, madeira guaiac, musgo de carvalho, patchouli"}, {"codigo": "61", "nome": "VERSACE EROS", "marca": "Versace", "categoria": "Masculinos", "img": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.16657.avif", "acordes": "baunilha, aromático, verde, fresco especiado, âmbar", "topo": "hortelã, maçã verde, limão", "coracao": "fava tonka, ambroxan, gerânio", "fundo": "baunilha de Madagascar, cedro da Virgínia, cedro Atlas, vetiver, musgo de carvalho"}];
+    const bodySplashFeminino = [{"codigo": "BSF-01", "nome": "Rouge", "inspiracao": "Baccarat Rouge 540", "marca": "Maison Francis Kurkdjian"}, {"codigo": "BSF-02", "nome": "Anjo", "inspiracao": "Angel", "marca": "Mugler"}, {"codigo": "BSF-03", "nome": "Atena", "inspiracao": "Olympea", "marca": "Rabanne"}, {"codigo": "BSF-04", "nome": "Belle", "inspiracao": "La Vie Est Belle", "marca": "Lancôme"}, {"codigo": "BSF-05", "nome": "L'óe", "inspiracao": "Chloé", "marca": "Chloé"}, {"codigo": "BSF-06", "nome": "Delie", "inspiracao": "Delina", "marca": "Parfums de Marly"}, {"codigo": "BSF-07", "nome": "Ly", "inspiracao": "Lily", "marca": "O Boticário"}, {"codigo": "BSF-08", "nome": "Fany", "inspiracao": "Fame", "marca": "Rabanne"}, {"codigo": "BSF-09", "nome": "Lin", "inspiracao": "L'Interdit", "marca": "Givenchy"}, {"codigo": "BSF-10", "nome": "Girl", "inspiracao": "Good Girl", "marca": "Carolina Herrera"}, {"codigo": "BSF-11", "nome": "Leid", "inspiracao": "Lady Million", "marca": "Rabanne"}, {"codigo": "BSF-12", "nome": "Livre", "inspiracao": "Libre", "marca": "Yves Saint Laurent"}, {"codigo": "BSF-13", "nome": "Madam", "inspiracao": "Coco Mademoiselle", "marca": "Chanel"}, {"codigo": "BSF-14", "nome": "S'dal", "inspiracao": "Scandal", "marca": "Jean Paul Gaultier"}, {"codigo": "BSF-15", "nome": "My", "inspiracao": "My Way", "marca": "Giorgio Armani"}, {"codigo": "BSF-16", "nome": "Ocean", "inspiracao": "Ocean di Gioia", "marca": "Giorgio Armani"}, {"codigo": "BSF-17", "nome": "Rosé", "inspiracao": "212 Vip Rosé", "marca": "Carolina Herrera"}];
+    const bodySplashMasculino = [{"codigo": "BSM-01", "nome": "Black", "inspiracao": "212 VIP Black", "marca": "Carolina Herrera"}, {"codigo": "BSM-02", "nome": "Acqua", "inspiracao": "Acqua di Gio", "marca": "Giorgio Armani"}, {"codigo": "BSM-03", "nome": "Gold", "inspiracao": "1 Million", "marca": "Rabanne"}, {"codigo": "BSM-04", "nome": "Sport", "inspiracao": "Allure Homme Sport", "marca": "Chanel"}, {"codigo": "BSM-05", "nome": "Boss", "inspiracao": "Boss Bottled", "marca": "Hugo Boss"}, {"codigo": "BSM-06", "nome": "Scandal", "inspiracao": "Scandal Pour Homme", "marca": "Jean Paul Gaultier"}, {"codigo": "BSM-07", "nome": "Ventus", "inspiracao": "Aventus", "marca": "Creed"}, {"codigo": "BSM-08", "nome": "Invict", "inspiracao": "Invictus", "marca": "Rabanne"}, {"codigo": "BSM-09", "nome": "Vip", "inspiracao": "212 VIP Men", "marca": "Carolina Herrera"}, {"codigo": "BSM-10", "nome": "Men", "inspiracao": "212 Men", "marca": "Carolina Herrera"}, {"codigo": "BSM-11", "nome": "Selva", "inspiracao": "Sauvage", "marca": "Dior"}];
+    const essenciasAmbiente = [{"codigo": "AMB-01", "nome": "Fig Fleurs", "tipo": "Home Spray / Difusor", "perfil": "Floral elegante e sofisticado"}, {"codigo": "AMB-02", "nome": "Madeira Nobre", "tipo": "Home Spray / Difusor", "perfil": "Amadeirado refinado e acolhedor"}, {"codigo": "AMB-03", "nome": "Patchouli", "tipo": "Home Spray / Difusor", "perfil": "Terroso marcante com toque nobre"}, {"codigo": "AMB-04", "nome": "Vanilla", "tipo": "Home Spray / Difusor", "perfil": "Doce envolvente e confortável"}, {"codigo": "AMB-05", "nome": "Lavanda", "tipo": "Home Spray / Difusor", "perfil": "Calmante, limpa e clássica"}, {"codigo": "AMB-06", "nome": "Pure Essence", "tipo": "Home Spray / Difusor", "perfil": "Leve, limpa e moderna"}, {"codigo": "AMB-07", "nome": "Chá Branco", "tipo": "Home Spray / Difusor", "perfil": "Suave, fresco e sofisticado"}, {"codigo": "AMB-08", "nome": "Mandarina e Canela", "tipo": "Home Spray / Difusor", "perfil": "Cítrico especiado com calor elegante"}];
 
-    const cardHtml = (p) => `
-      <div class="item perfume-card" data-search="${[
-        p.codigo, p.nome, p.marca, p.acordes, p.topo, p.coracao, p.fundo, p.categoria
-      ].join(' ').toLowerCase()}">
-        <img src="${p.img}" alt="${p.nome}" class="foto">
-        <div class="conteudo">
-          <span class="codigo">${p.codigo}</span>
-          <div class="nome">${p.nome}</div>
-          <div class="marca">${p.marca}</div>
-          <div class="fragrancia">Inspiração olfativa ${p.categoria === 'Femininos' ? 'feminina' : 'masculina'}.</div>
-          <div class="notas">
-            <div class="bloco-nota"><strong>Acordes:</strong><span>${p.acordes}</span></div>
-            <div class="bloco-nota"><strong>Topo:</strong><span>${p.topo}</span></div>
-            <div class="bloco-nota"><strong>Coração:</strong><span>${p.coracao}</span></div>
-            <div class="bloco-nota"><strong>Fundo:</strong><span>${p.fundo}</span></div>
+    function cardPerfume(p) {
+      const genero = p.categoria === 'Femininos' ? 'feminino' : 'masculino';
+      return `
+        <div class="item produto-card" data-gender="${genero}" data-type="perfume" data-search="${
+          [p.codigo, p.nome, p.marca, p.acordes, p.topo, p.coracao, p.fundo, p.categoria, 'perfume']
+            .join(' ')
+            .toLowerCase()
+        }">
+          <img src="${p.img}" alt="${p.nome}" class="foto">
+          <div class="conteudo">
+            <div class="top-tags">
+              <span class="codigo">${p.codigo}</span>
+              <span class="chip">Perfume</span>
+            </div>
+            <div class="nome">${p.nome}</div>
+            <div class="marca">${p.marca}</div>
+            <div class="fragrancia">Inspiração olfativa ${genero === 'feminino' ? 'feminina' : 'masculina'}.</div>
+            <div class="notas">
+              <div class="bloco-nota"><strong>Acordes:</strong><span>${p.acordes}</span></div>
+              <div class="bloco-nota"><strong>Topo:</strong><span>${p.topo}</span></div>
+              <div class="bloco-nota"><strong>Coração:</strong><span>${p.coracao}</span></div>
+              <div class="bloco-nota"><strong>Fundo:</strong><span>${p.fundo}</span></div>
+            </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
+    }
+
+    function cardBody(item, genero) {
+      const initials = item.nome.slice(0, 2).toUpperCase();
+      return `
+        <div class="item produto-card" data-gender="${genero}" data-type="body-splash" data-search="${
+          [item.codigo, item.nome, item.inspiracao, item.marca, genero, 'body splash']
+            .join(' ')
+            .toLowerCase()
+        }">
+          <div class="visual-luxo"><div class="monograma">${initials}</div></div>
+          <div class="conteudo">
+            <div class="top-tags">
+              <span class="codigo">${item.codigo}</span>
+              <span class="chip">Body Splash</span>
+            </div>
+            <div class="nome">${item.nome}</div>
+            <div class="marca">${item.marca}</div>
+            <div class="fragrancia">Inspiração olfativa em <strong>${item.inspiracao}</strong>, com proposta leve, elegante e confortável para o dia a dia.</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function cardAmbiente(item, tipo) {
+      const initials = item.nome.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase();
+      return `
+        <div class="item produto-card" data-gender="ambiente" data-type="${tipo}" data-search="${
+          [item.codigo, item.nome, item.tipo, item.perfil, tipo, 'ambiente']
+            .join(' ')
+            .toLowerCase()
+        }">
+          <div class="visual-luxo"><div class="monograma">${initials}</div></div>
+          <div class="conteudo">
+            <div class="top-tags">
+              <span class="codigo">${item.codigo}</span>
+              <span class="chip">${tipo === 'home-spray' ? 'Home Spray' : 'Difusor'}</span>
+            </div>
+            <div class="nome">${item.nome}</div>
+            <div class="marca">${tipo === 'home-spray' ? 'Linha Casa Perfumada' : 'Difusores de Ambiente'}</div>
+            <div class="fragrancia">${item.perfil}. Disponível na linha de ambientes MR Parfum.</div>
+          </div>
+        </div>
+      `;
+    }
 
     const grids = {
-      Femininos: document.getElementById('grid-femininos'),
-      Masculinos: document.getElementById('grid-masculinos'),
+      perfumesFemininos: document.getElementById('grid-perfumes-femininos'),
+      perfumesMasculinos: document.getElementById('grid-perfumes-masculinos'),
+      bodyFeminino: document.getElementById('grid-body-feminino'),
+      bodyMasculino: document.getElementById('grid-body-masculino'),
+      homeSpray: document.getElementById('grid-home-spray'),
+      difusores: document.getElementById('grid-difusores'),
     };
 
-    perfumes.forEach(p => {
-      grids[p.categoria].insertAdjacentHTML('beforeend', cardHtml(p));
+    perfumes.filter(p => p.categoria === 'Femininos').forEach(p => {
+      grids.perfumesFemininos.insertAdjacentHTML('beforeend', cardPerfume(p));
+    });
+
+    perfumes.filter(p => p.categoria === 'Masculinos').forEach(p => {
+      grids.perfumesMasculinos.insertAdjacentHTML('beforeend', cardPerfume(p));
+    });
+
+    bodySplashFeminino.forEach(item => {
+      grids.bodyFeminino.insertAdjacentHTML('beforeend', cardBody(item, 'feminino'));
+    });
+
+    bodySplashMasculino.forEach(item => {
+      grids.bodyMasculino.insertAdjacentHTML('beforeend', cardBody(item, 'masculino'));
+    });
+
+    essenciasAmbiente.forEach(item => {
+      grids.homeSpray.insertAdjacentHTML('beforeend', cardAmbiente(item, 'home-spray'));
+      grids.difusores.insertAdjacentHTML('beforeend', cardAmbiente(item, 'difusor'));
     });
 
     const buscaInput = document.getElementById('buscaPerfume');
     const resultadoBusca = document.getElementById('resultadoBusca');
 
-    function filtrarPerfumes() {
-      const cards = document.querySelectorAll('.perfume-card');
-      const termo = buscaInput.value.toLowerCase().trim();
-      let visiveis = 0;
-      cards.forEach(card => {
-        const texto = card.getAttribute('data-search');
-        const match = termo === '' || texto.includes(termo);
-        card.classList.toggle('hidden', !match);
-        if (match) visiveis++;
+    const filters = {
+      gender: 'todos',
+      type: 'todos'
+    };
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group;
+        const value = btn.dataset.filter;
+        filters[group] = value;
+
+        document.querySelectorAll(`.filter-btn[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        aplicarFiltros();
       });
-      resultadoBusca.textContent = termo ? `${visiveis} resultado(s) encontrado(s) para: "${termo}"` : '';
+    });
+
+    function aplicarFiltros() {
+      const termo = buscaInput.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.produto-card');
+      let visiveis = 0;
+
+      cards.forEach(card => {
+        const gender = card.dataset.gender;
+        const type = card.dataset.type;
+        const search = card.dataset.search || '';
+
+        const okGender = filters.gender === 'todos' || gender === filters.gender;
+        const okType = filters.type === 'todos' || type === filters.type;
+        const okBusca = termo === '' || search.includes(termo);
+
+        const show = okGender && okType && okBusca;
+        card.classList.toggle('hidden', !show);
+        if (show) visiveis++;
+      });
+
+      document.querySelectorAll('.secao').forEach(secao => {
+        const hasVisible = secao.querySelector('.produto-card:not(.hidden)');
+        secao.classList.toggle('hidden', !hasVisible);
+      });
+
+      let resumo = [];
+      if (filters.gender !== 'todos') resumo.push(`gênero/tipo: ${filters.gender}`);
+      if (filters.type !== 'todos') resumo.push(`categoria: ${filters.type.replace('-', ' ')}`);
+      if (termo) resumo.push(`busca: "${termo}"`);
+
+      resultadoBusca.textContent = resumo.length
+        ? `${visiveis} resultado(s) encontrado(s) — ${resumo.join(' | ')}`
+        : '';
     }
 
-    buscaInput.addEventListener('input', filtrarPerfumes);
+    buscaInput.addEventListener('input', aplicarFiltros);
   </script>
 </body>
 </html>
